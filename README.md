@@ -15,5 +15,5 @@ print(egg.single_css('a')['href'])  # Select a single tag and get the `href` att
 
 # Installing it
 ```sh
-pip install git+https://github.com/ZSendokame/Penv.git
+pip install git+https://github.com/ZSendokame/Fly.git
 ````
