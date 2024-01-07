@@ -1,12 +1,15 @@
 from typing import Any, Self
 
-from lxml.html import fromstring, tostring, HtmlElement
+from lxml.html import fromstring, HtmlElement
 from lxml.cssselect import CSSSelector
 
 
 class HTML:
     def __init__(self, html: (str or HtmlElement)) -> None:
         self.html = fromstring(html) if isinstance(html, str) else html
+
+        print(self.html)
+        print(type(self.html))
 
     def __repr__(self) -> str:
         return f'<Tag {self.html.tag} [{hex(id(self))}]>'
@@ -22,7 +25,7 @@ class HTML:
         tags = selector(self.html)
 
         if len(tags):
-            return [HTML((tostring(tag))) for tag in tags[0:total]]
+            return [HTML(tag) for tag in tags[0:total]]
 
         return None
 
