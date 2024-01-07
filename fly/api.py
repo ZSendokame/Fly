@@ -8,9 +8,6 @@ class HTML:
     def __init__(self, html: (str or HtmlElement)) -> None:
         self.html = fromstring(html) if isinstance(html, str) else html
 
-        print(self.html)
-        print(type(self.html))
-
     def __repr__(self) -> str:
         return f'<Tag {self.html.tag} [{hex(id(self))}]>'
 
