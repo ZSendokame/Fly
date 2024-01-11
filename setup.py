@@ -4,7 +4,7 @@ long_description = open('./README.md')
 
 setup(
     name='Fly',
-    version='1.0.0',
+    version='1.0.1',
     url='https://github.com/ZSendokame/Fly',
     license='MIT license',
     author='ZSendokame',
