@@ -6,7 +6,7 @@ from lxml.cssselect import CSSSelector
 
 class HTML:
     def __init__(self, html: (str or HtmlElement)) -> None:
-        self.html = fromstring(html) if isinstance(html, str) else html
+        self.html = fromstring(html.strip()) if isinstance(html, str) else html
 
     def __repr__(self) -> str:
         return f'<Tag {self.html.tag} [{hex(id(self))}]>'
@@ -15,7 +15,7 @@ class HTML:
         return self.html.attrib.get(attr)
 
     def text(self) -> str:
-        return self.html.text_content()
+        return self.html.text_content().strip()
 
     def css(self, selector: str, total: int = None) -> list[Self]:
         selector = CSSSelector(selector)
